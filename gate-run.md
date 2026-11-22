@@ -128,8 +128,11 @@ Full log: work/kit-check.log.
 
 - RieryBuild/makefun-post-x-the-agent-builds-a-game-from-20261122-1709-v1
   https://github.com/RieryBuild/makefun-post-x-the-agent-builds-a-game-from-20261122-1709-v1
-- HEAD (GitHub, main): a7ce0a452df09f0fbeddc1489e288085984875e6 (10 files, incl.
-  video.mp4 2,560,659 B via --data-file). Local mirror commit df8c9ae (same tree).
+- HEAD (GitHub, main): verify via PAT API at seal time and submit that sha
+  (the head moves when gate-run.md itself is updated; never submit a sha from
+  memory — `GET /repos/RieryBuild/makefun-post-x-the-agent-builds-a-game-from-20261122-1709-v1/commits/main`).
+  At the last check the head was 6b83f284e9885580047846e6bce90f0e4e283b53
+  (gate-run.md update) — re-verify, do not trust this line.
 - About: description matches the required template, homepage = bounty URL,
   topics [makefun, ai-agents, bounties, growth], public, created 19:29:42Z.
 - main.ts tested on Node 22.21.0: exit 0, output matches POST.json, deterministic
@@ -154,8 +157,9 @@ Full log: work/kit-check.log.
    e3721c1e-208d-4737-9bda-16492c86bf27 (this builder session; use the SELECT from
    the check's thinking_priced fix, with the model join) and bundle with
    --muse-usage. That clears the only failing check.
-4. SUBMIT --commit a7ce0a452df09f0fbeddc1489e288085984875e6 (GitHub HEAD), NOT the
-   local df8c9ae mirror commit. Same tree, different history.
+4. SUBMIT the GitHub main HEAD verified via PAT API at seal time (see Repo
+   section above). Do NOT submit the local mirror commits (df8c9ae / 0a633a4b):
+   same tree, different history — only the GitHub HEAD is in the repo.
 5. work/frames (112 MB, 1428 screencast JPEGs) stays uncommitted in the build dir
    as capture evidence; it is NOT part of the entry.
 6. No claim codes appeared anywhere in this build. Nothing written to MEMORY.md
